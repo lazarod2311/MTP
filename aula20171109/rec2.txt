@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include <string.h>
+char retorno (char str[], int n, int c) {
+	if (n < c) {
+		return str;
+	}
+	 str[c] = str[n];
+	 return retorno(str,n-1,c+1);
+}
+int main () {
+	char str[100];
+	int n=0, c=0;
+	gets (str);
+	n = strlen(str); 
+	printf ("%c" ,retorno(str,n,c));
+  return 0;
+}
